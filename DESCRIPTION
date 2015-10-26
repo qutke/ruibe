@@ -1,4 +1,4 @@
-Package: uibe
+Package: ruibe
 Title: R Package for UIBE project
 Type: Package
 Description: R Package for UIBE project provided by Qutke.com.
@@ -13,6 +13,6 @@ Imports:
 License: GPL-2
 LazyData: TRUE
 Date: 2015-10-19
-URL: http://uibe.qutke.com
+URL: http://ruibe.qutke.com
 Collate:
     'uibe.r'

@@ -1,7 +1,7 @@
 #' Initiate the uibe project 
 #' 
 #' @docType package
-#' @name uibe
+#' @name ruibe
 NULL
 
 #' Qutke host server
