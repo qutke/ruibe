@@ -1,0 +1,7 @@
+.gitignore
+dist
+README*
+NEWS*
+FAQ*
+.RData
+.Rhistory

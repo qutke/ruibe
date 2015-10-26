@@ -1,0 +1,18 @@
+Package: uibe
+Title: R Package for UIBE project
+Type: Package
+Description: R Package for UIBE project provided by Qutke.com.
+Author: Dan Zhang
+Version: 0.1
+Maintainer: Dan Zhang <zhangd@qutke.com>
+Depends:
+    R (>= 3.1.1)
+Imports:
+    httr,
+    RJSONIO    
+License: GPL-2
+LazyData: TRUE
+Date: 2015-10-19
+URL: http://uibe.qutke.com
+Collate:
+    'uibe.r'
