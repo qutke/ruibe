@@ -4,48 +4,57 @@
 \alias{getData}
 \title{Get data from HTTP}
 \usage{
-getData(name, args = NULL, key = NULL)
+getData(data, key, qtid = NULL, date = NULL, sw1 = NULL, sw2 = NULL,
+  sw3 = NULL)
 }
 \arguments{
-\item{name}{character}
-
-\item{args}{list}
+\item{data}{character}
 
 \item{key}{character}
+
+\item{qtid}{character}
+
+\item{date}{character}
+
+\item{sw1}{character}
+
+\item{sw2}{character}
+
+\item{sw3}{character}
 }
 \value{
-data.frame
+list
 }
 \description{
 Get data from HTTP
 }
 \examples{
 \dontrun{
-TradingDay<-getData('TradingDay',key='xxxx')
+TradingDay<-getData('tradingDay',key='xxx')
 
-KeyMap1<-getData('KeyMap',args=list(qtid='000001.SZ'),key='xxxx')
+KeyMap1<-getData(data='keyMap',qtid='000001.SZ',key='xxx')
 
-stock1<-getData('stock',args=list(qtid='000001.SZ'),key='xxxx')
-stock2<-getData('stock',args=list(date='2015-09-29'),key='xxxx')
-stock3<-getData('stock',args=list(qtid='000001.SZ',date='2015-09-29'),key='xxxx')
+stock1<-getData(data='mktDaily',qtid='000001.SZ',key='xxx')
+stock2<-getData(data='mktDaily',date='2015-09-29',key='xxx')
+stock3<-getData(data='mktDaily',qtid='000001.SZ',date='2015-09-29',key='xxx')
 
-stockF1<-getData('stockFwd',args=list(qtid='000001.SZ'),key='xxxx')
-stockF2<-getData('stockFwd',args=list(date='2015-09-29'),key='xxxx')
-stockF3<-getData('stockFwd',args=list(qtid='000001.SZ',date='2015-09-29'),key='xxxx')
+stockF1<-getData(data='mktFwdDaily',qtid='000001.SZ',key='xxx')
+stockF2<-getData(data='mktFwdDaily',date='2015-09-29',key='xxx')
+stockF3<-getData(data='mktFwdDaily',qtid='000001.SZ',date='2015-09-29',key='xxx')
 
-index1<-getData('index',args=list(qtid='000001.SH'),key='xxxx')
-index2<-getData('index',args=list(date='2015-09-29'),key='xxxx')
-index3<-getData('index',args=list(qtid='000001.SH',date='2015-09-29'),key='xxxx')
+index1<-getData(data='mktDataIndex',qtid='000001.SH',key='xxx')
+index2<-getData(data='mktDataIndex',date='2015-09-29',key='xxx')
+index3<-getData(data='mktDataIndex',qtid='000001.SH',date='2015-09-29'),key='xxx')
 
-industry0<-getData('industry',key='xxxx')
-industry1<-getData('industry',args=list(qtid='000001.SZ'),key='xxxx')
-industry2<-getData('industry',args=list(qtid='000001.SZ',sw1='sw1'),key='xxxx')
-industry3<-getData('industry',args=list(qtid='000001.SZ',sw1='sw1',sw2='sw2'),key='xxxx')
-industry4<-getData('industry',args=list(qtid='000001.SZ',sw1='sw1',sw2='sw2',sw3='sw3'),key='xxxx')
+industry0<-getData(data='industryType',key='xxx')
+industry1<-getData(data='industryType',qtid='000001.SZ',key='xxx')
+industry2<-getData(data='industryType',qtid='000001.SZ',sw1='sw1',key='xxx')
+industry3<-getData(data='industryType',qtid='000001.SZ',sw1='sw1',sw2='sw2',key='xxx')
+industry4<-getData(data='industryType',qtid='000001.SZ',sw1='sw1',sw2='sw2',sw3='sw3',key='xxx')
 
-fund1<-getData('fund',args=list(qtid='000001.SZ'),key='xxxx')
-fund2<-getData('fund',args=list(date='2015-09-29'),key='xxxx')
-fund3<-getData('fund',args=list(qtid='000001.SZ',date='2015-09-29'),key='xxxx')
+fund1<-getData(data='financialIndex',qtid='000001.SZ',key='xxx')
+fund2<-getData(data='financialIndex',date='2015-09-29',key='xxx')
+fund3<-getData(data='financialIndex',qtid='000001.SZ',date='2015-09-29',key='xxx')
 }
 }
 \author{

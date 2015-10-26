@@ -9,9 +9,6 @@ init(key)
 \arguments{
 \item{key}{character}
 }
-\value{
-nothing
-}
 \description{
 Initiate the uibe project
 }
