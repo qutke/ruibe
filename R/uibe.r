@@ -90,7 +90,7 @@ getData<-function(data,key,qtid=NULL,date=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
   url <- apis[[data]]
   if(is.null(url))  stop("ERROR: data is not match!")
   
-  args<-list(qtid=qtid,date=date,sw1=sw1,sw2=sw2,sw3=sw3)
+  args<-list(key=key,qtid=qtid,date=date,sw1=sw1,sw2=sw2,sw3=sw3)
   
   res<-GET(url, query=args)
   return(content(res,encoding='UTF-8'))
