@@ -3,7 +3,7 @@ Title: R Package for UIBE project
 Type: Package
 Description: R Package for UIBE project provided by Qutke.com.
 Author: Dan Zhang
-Version: 0.3
+Version: 0.4
 Maintainer: Dan Zhang <zhangd@qutke.com>
 Depends:
     R (>= 3.1.1)
@@ -16,3 +16,4 @@ Date: 2015-10-19
 URL: http://ruibe.qutke.com
 Collate:
     'uibe.r'
+    'util.r'

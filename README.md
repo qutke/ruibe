@@ -22,20 +22,16 @@ init(key)
 
 TradingDay<-getData('tradingDay',key=key)
 
-KeyMap0<-getData(data='keyMap',key=key)
 KeyMap1<-getData(data='keyMap',qtid='000001.SZ',key=key)
 
-stock0<-getData(data='mktDaily',key=key)
 stock1<-getData(data='mktDaily',qtid='000001.SZ',key=key)
 stock2<-getData(data='mktDaily',date='2015-09-29',key=key)
 stock3<-getData(data='mktDaily',qtid='000001.SZ',date='2015-09-29',key=key)
 
-stockF0<-getData(data='mktFwdDaily',key=key)
 stockF1<-getData(data='mktFwdDaily',qtid='000001.SZ',key=key)
 stockF2<-getData(data='mktFwdDaily',date='2015-09-29',key=key)
 stockF3<-getData(data='mktFwdDaily',qtid='000001.SZ',date='2015-09-29',key=key)
 
-index0<-getData(data='mktDataIndex',key=key)
 index1<-getData(data='mktDataIndex',qtid='000001.SH',key=key)
 index2<-getData(data='mktDataIndex',date='2015-09-29',key=key)
 index3<-getData(data='mktDataIndex',qtid='000001.SH',date='2015-09-29',key=key)
@@ -46,7 +42,6 @@ industry2<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',key=key)
 industry3<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',sw2='银行',key=key)
 industry4<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',sw2='银行',sw3='银行',key=key)
 
-fund0<-getData(data='financialIndex',key=key)
 fund1<-getData(data='financialIndex',qtid='000001.SZ',key=key)
 fund2<-getData(data='financialIndex',date='2015-09-29',key=key)
 fund3<-getData(data='financialIndex',qtid='000001.SZ',date='2015-09-29',key=key)

@@ -87,13 +87,13 @@ init <- function (key) {
 getData<-function(data,key,qtid=NULL,date=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
   if(is.null(key))  stop("ERROR: Key is not empty!")
 
-  url <- apis[[data]]
-  if(is.null(url))  stop("ERROR: data is not match!")
+  api <- apis[[data]]
+  if(is.null(api))  stop("ERROR: data is not match!")
   
   args<-list(key=key,qtid=qtid,date=date,sw1=sw1,sw2=sw2,sw3=sw3)
-  
-  res<-GET(url, query=args)
-  return(content(res,encoding='UTF-8'))
+  query<-compose_query(args)
+  url<-paste(api,query,sep="?")
+  return(read.table(url,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"))
 }
 
 
