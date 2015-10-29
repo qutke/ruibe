@@ -6,8 +6,8 @@ NULL
 
 #' Qutke host server
 host<-list(
-  host1='http://test-nquote.qutke.com',
-  host2='http://10.150.145.105:3014/qutke_inner_api_data'
+  host1='http://datas.qutke.com',
+  host2='http://uibe.qutke.com/qutke_inner_api_data'
 )
 
 #' Qutke Data API

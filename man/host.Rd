@@ -5,8 +5,8 @@
 \alias{host}
 \title{Qutke host server}
 \format{\preformatted{List of 2
- $ host1: chr "http://test-nquote.qutke.com"
- $ host2: chr "http://10.150.145.105:3014/qutke_inner_api_data"
+ $ host1: chr "http://datas.qutke.com"
+ $ host2: chr "http://uibe.qutke.com/qutke_inner_api_data"
 }}
 \usage{
 host
