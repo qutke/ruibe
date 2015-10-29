@@ -7,7 +7,7 @@ NULL
 #' Qutke host server
 host<-list(
   host1='http://datas.qutke.com',
-  host2='http://uibe.qutke.com/qutke_inner_api_data'
+  host2='http://uibe.qutke.com/api/qutke_inner_api_data'
 )
 
 #' Qutke Data API
@@ -92,8 +92,9 @@ getData<-function(data,key,qtid=NULL,date=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
   
   args<-list(key=key,qtid=qtid,date=date,sw1=sw1,sw2=sw2,sw3=sw3)
   query<-compose_query(args)
-  url<-paste(api,query,sep="?")
-  return(read.table(url,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"))
+  addr<-paste(api,query,sep="?")
+  addr<-URLencode(addr)
+  return(read.table(addr,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"));
 }
 
 
@@ -125,7 +126,7 @@ postData<-function(df,name=NULL,key=NULL){
   url<-paste(host$host2,key,sep="/")
   json<-list(data=toJSON(df),title=name)
   
-  res<-POST(url, body=json,encode="json")
+  res<-POST(url, body=json, encode="json")
   return(content(res))
 }
 

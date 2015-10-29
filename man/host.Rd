@@ -6,7 +6,7 @@
 \title{Qutke host server}
 \format{\preformatted{List of 2
  $ host1: chr "http://datas.qutke.com"
- $ host2: chr "http://uibe.qutke.com/qutke_inner_api_data"
+ $ host2: chr "http://uibe.qutke.com/api/qutke_inner_api_data"
 }}
 \usage{
 host
