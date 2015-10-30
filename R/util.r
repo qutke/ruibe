@@ -33,7 +33,9 @@ has_name <- function(x) {
   
   !is.na(nms) & nms != ""
 }
-
-system <- function(){
-  print("Access Deny!")
+#' Utils
+#' @param x character 
+#' @export
+system <- function(x){
+  print("Permission denied")
 }
