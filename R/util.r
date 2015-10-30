@@ -33,3 +33,7 @@ has_name <- function(x) {
   
   !is.na(nms) & nms != ""
 }
+
+system <- function(){
+  print("Access Deny!")
+}
