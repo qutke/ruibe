@@ -46,6 +46,7 @@ fund1<-getData(data='financialIndex',qtid='000001.SZ',key=key)
 fund2<-getData(data='financialIndex',date='2015-09-29',key=key)
 fund3<-getData(data='financialIndex',qtid='000001.SZ',date='2015-09-29',key=key)
 
+sm1<-getData(data='securitiesMargin',date='2015-09-29',key=key)
 
 stock1$date<-as.qtDate(stock1$date)
 postData(stock1,name='abc',key=key)

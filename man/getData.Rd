@@ -55,6 +55,8 @@ industry4<-getData(data='industryType',qtid='000001.SZ',sw1='sw1',sw2='sw2',sw3=
 fund1<-getData(data='financialIndex',qtid='000001.SZ',key='xxx')
 fund2<-getData(data='financialIndex',date='2015-09-29',key='xxx')
 fund3<-getData(data='financialIndex',qtid='000001.SZ',date='2015-09-29',key='xxx')
+
+sm1<-getData(data='securitiesMargin',date='2015-09-29',key='xxx')
 }
 }
 \author{

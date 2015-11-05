@@ -18,7 +18,8 @@ apis<-list(
   mktFwdDaily=paste(host$host1,'mktFwdDaily',sep='/'),
   mktDataIndex=paste(host$host1,'mktDataIndex',sep='/'),
   industryType=paste(host$host1,'industryType',sep='/'),
-  financialIndex=paste(host$host1,'financialIndex',sep='/')
+  financialIndex=paste(host$host1,'financialIndex',sep='/'),
+  securitiesMargin=paste(host$host1,'securitiesMargin',sep='/')
 )
 
 #' Initiate the uibe project 
@@ -81,6 +82,8 @@ init <- function (key) {
 #' fund1<-getData(data='financialIndex',qtid='000001.SZ',key='xxx')
 #' fund2<-getData(data='financialIndex',date='2015-09-29',key='xxx')
 #' fund3<-getData(data='financialIndex',qtid='000001.SZ',date='2015-09-29',key='xxx')
+#' 
+#' sm1<-getData(data='securitiesMargin',date='2015-09-29',key='xxx')
 #' }
 #' 
 #' @export 
