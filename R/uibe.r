@@ -4,10 +4,15 @@
 #' @name ruibe
 NULL
 
+#apiurl<-'http://localhost:8090/api'
+apiurl<-'http://datas.qutke.com/api'
+
 #' Qutke host server
 host<-list(
-  host1='http://datas.qutke.com',
-  host2='http://uibe.qutke.com/api/qutke_inner_api_data'
+  #host1='http://datas.qutke.com',
+  #host2='http://uibe.qutke.com/api/qutke_inner_api_data'
+  host1='http://localhost:8090/api/qutkedata',
+  host2='http://localhost:8090/api/adduserdata'
 )
 
 #' Qutke Data API
@@ -87,13 +92,13 @@ init <- function (key) {
 #' }
 #' 
 #' @export 
-getData<-function(data,key,qtid=NULL,date=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
+getData<-function(data,key,vars=NULL,qtid=NULL,startdate=NULL,enddate=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
   if(is.null(key))  stop("ERROR: Key is not empty!")
-
-  api <- apis[[data]]
+  
+  api <- paste(apiurl,'qutkedata',sep="/")
   if(is.null(api))  stop("ERROR: data is not match!")
   
-  args<-list(key=key,qtid=qtid,date=date,sw1=sw1,sw2=sw2,sw3=sw3)
+  args<-list(data=data,key=key,vars=vars,qtid=qtid,startdate=startdate,enddate=enddate,sw1=sw1,sw2=sw2,sw3=sw3)
   query<-compose_query(args)
   addr<-paste(api,query,sep="?")
   addr<-URLencode(addr)
@@ -126,7 +131,8 @@ postData<-function(df,name=NULL,key=NULL){
   if(nrow(df)>2000) stop("ERROR: Data rows is too large!")
   if(ncol(df)>15) stop("ERROR: Data columns is too large!")
 
-  url<-paste(host$host2,key,sep="/")
+  #url<-paste(host$host2,key,sep="/")
+  url<-paste(apiurl,'adduserdata',key,sep="/")
   json<-list(data=toJSON(df),title=name)
   
   res<-POST(url, body=json, encode="json")

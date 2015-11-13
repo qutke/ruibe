@@ -5,3 +5,5 @@ NEWS*
 FAQ*
 .RData
 .Rhistory
+^.*\.Rproj$
+^\.Rproj\.user$

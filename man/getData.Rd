@@ -4,8 +4,8 @@
 \alias{getData}
 \title{Get data from HTTP}
 \usage{
-getData(data, key, qtid = NULL, date = NULL, sw1 = NULL, sw2 = NULL,
-  sw3 = NULL)
+getData(data, key, vars = NULL, qtid = NULL, startdate = NULL,
+  enddate = NULL, sw1 = NULL, sw2 = NULL, sw3 = NULL)
 }
 \arguments{
 \item{data}{character}
@@ -14,13 +14,13 @@ getData(data, key, qtid = NULL, date = NULL, sw1 = NULL, sw2 = NULL,
 
 \item{qtid}{character}
 
-\item{date}{character}
-
 \item{sw1}{character}
 
 \item{sw2}{character}
 
 \item{sw3}{character}
+
+\item{date}{character}
 }
 \value{
 list

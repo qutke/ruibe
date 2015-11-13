@@ -5,14 +5,14 @@
 \alias{apis}
 \title{Qutke Data API}
 \format{\preformatted{List of 8
- $ tradingDay      : chr "http://datas.qutke.com/tradingDay"
- $ keyMap          : chr "http://datas.qutke.com/keyMap"
- $ mktDaily        : chr "http://datas.qutke.com/mktDaily"
- $ mktFwdDaily     : chr "http://datas.qutke.com/mktFwdDaily"
- $ mktDataIndex    : chr "http://datas.qutke.com/mktDataIndex"
- $ industryType    : chr "http://datas.qutke.com/industryType"
- $ financialIndex  : chr "http://datas.qutke.com/financialIndex"
- $ securitiesMargin: chr "http://datas.qutke.com/securitiesMargin"
+ $ tradingDay      : chr "http://localhost:8090/api/qutkedata/tradingDay"
+ $ keyMap          : chr "http://localhost:8090/api/qutkedata/keyMap"
+ $ mktDaily        : chr "http://localhost:8090/api/qutkedata/mktDaily"
+ $ mktFwdDaily     : chr "http://localhost:8090/api/qutkedata/mktFwdDaily"
+ $ mktDataIndex    : chr "http://localhost:8090/api/qutkedata/mktDataIndex"
+ $ industryType    : chr "http://localhost:8090/api/qutkedata/industryType"
+ $ financialIndex  : chr "http://localhost:8090/api/qutkedata/financialIndex"
+ $ securitiesMargin: chr "http://localhost:8090/api/qutkedata/securitiesMargin"
 }}
 \usage{
 apis
