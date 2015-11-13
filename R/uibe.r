@@ -51,8 +51,10 @@ init <- function (key) {
 #' 
 #' @param data character
 #' @param key character
+#' @param vars character
 #' @param qtid character
-#' @param date character
+#' @param startdate character
+#' @param enddate character
 #' @param sw1 character
 #' @param sw2 character
 #' @param sw3 character

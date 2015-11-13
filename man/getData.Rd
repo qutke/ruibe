@@ -12,15 +12,19 @@ getData(data, key, vars = NULL, qtid = NULL, startdate = NULL,
 
 \item{key}{character}
 
+\item{vars}{character}
+
 \item{qtid}{character}
+
+\item{startdate}{character}
+
+\item{enddate}{character}
 
 \item{sw1}{character}
 
 \item{sw2}{character}
 
 \item{sw3}{character}
-
-\item{date}{character}
 }
 \value{
 list
