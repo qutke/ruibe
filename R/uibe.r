@@ -5,7 +5,7 @@
 NULL
 
 #apiurl<-'http://localhost:8090/api'
-apiurl<-'http://datas.qutke.com/api'
+apiurl<-'https://datas.qutke.com/api'
 
 #' Qutke host server
 host<-list(
