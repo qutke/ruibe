@@ -25,7 +25,6 @@ tradingDay<-getData('tradingDay',key=key)
 keyMap1<-getData(data='keyMap',qtid='000001.SZ',key=key)
 keyMap1<-getData(data='keyMap',vars='qtid,SecuCode,CompanyCode,ChiName',qtid='000001.SZ',key=key)
 
-
 stock1<-getData(data='mktDaily',qtid='000001.SZ',key=key)
 stock2<-getData(data='mktDaily',startdate='2015-09-29',key=key)
 stock3<-getData(data='mktDaily',qtid='000001.SZ',startdate='2015-09-29',key=key)

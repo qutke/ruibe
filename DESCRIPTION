@@ -2,9 +2,11 @@ Package: ruibe
 Title: R Package for UIBE project
 Type: Package
 Description: R Package for UIBE project provided by Qutke.com.
-Author: Dan Zhang
-Version: 0.10
-Maintainer: Dan Zhang <zhangd@qutke.com>
+Authors@R: c(
+    person("Dan", "Zhang", role = c("aut", "cre"), email = "zhangd@qutke.com"),
+    person("Yong", "Zhou", role = "aut", email = "zhouy@qutke.com")
+    )
+Version: 0.11
 Depends:
     R (>= 3.1.1)
 Imports:
