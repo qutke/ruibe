@@ -7,26 +7,6 @@ NULL
 #apiurl<-'http://localhost:8090/api'
 apiurl<-'https://datas.qutke.com/api'
 
-#' Qutke host server
-host<-list(
-  #host1='http://datas.qutke.com',
-  #host2='http://uibe.qutke.com/api/qutke_inner_api_data'
-  host1='http://localhost:8090/api/qutkedata',
-  host2='http://localhost:8090/api/adduserdata'
-)
-
-#' Qutke Data API
-apis<-list(
-  tradingDay=paste(host$host1,'tradingDay',sep='/'),
-  keyMap=paste(host$host1,'keyMap',sep='/'),
-  mktDaily=paste(host$host1,'mktDaily',sep='/'),
-  mktFwdDaily=paste(host$host1,'mktFwdDaily',sep='/'),
-  mktDataIndex=paste(host$host1,'mktDataIndex',sep='/'),
-  industryType=paste(host$host1,'industryType',sep='/'),
-  financialIndex=paste(host$host1,'financialIndex',sep='/'),
-  securitiesMargin=paste(host$host1,'securitiesMargin',sep='/')
-)
-
 #' Initiate the uibe project 
 #' @title Initiate
 #' @param key character
@@ -37,9 +17,20 @@ apis<-list(
 #' 
 #' @export 
 init <- function (key) {
+  versionno <- packageDescription('ruibe')$Version
   options(stringsAsFactors = FALSE)
   if(is.null(key)) stop("ERROR: Key is not empty!")
-  print("Initiate the Qutke UIBE project ")
+  
+  api <- paste(apiurl,'validate',sep="/")
+  if(is.null(api))  stop("ERROR: data is not match!")
+  
+  args<-list(key=key,version=versionno)
+  query<-compose_query(args)
+  addr<-paste(api,query,sep="?")
+  addr<-URLencode(addr)
+  result <- (read.table(addr,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"));
+  
+  print(result$message)
   invisible()
 }
 
@@ -155,6 +146,21 @@ as.qtDate<-function(val=Sys.Date()){
   as.character(as.numeric(as.POSIXct(as.Date(val)))*1000)
 }
 
-
+#' Subtracts the specified amount of Day to the current trading date
+#' @title Subtracts the specified amount of Day to the current trading date
+#' @param day amount to subtract
+#' @param key auth key
+#' @return character
+#' @author Zhou Yong
+#' @examples
+#' \dontrun{
+#' lastDays(5)
+#' }
+#' @export 
+lastDays<-function(day,key){
+  trading<-getData(data='tradingDay',key=key)
+  num<-as.integer(format(Sys.Date(), format="%Y%m%d"))
+  return(tail(trading[which(trading$busDate<num),],day)[1])
+}
 
 

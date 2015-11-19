@@ -3,6 +3,7 @@
 export(as.qtDate)
 export(getData)
 export(init)
+export(lastDays)
 export(postData)
 export(system)
 importFrom(RJSONIO,toJSON)
