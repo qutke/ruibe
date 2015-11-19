@@ -68,5 +68,7 @@ sm4<-getData(data='securitiesMargin',vars='TradingDay,SecuMarket,FinanceValue,Fi
 stock1$date<-as.qtDate(stock1$date)
 postData(stock1,name='abc',key=key)
 postData(industry0,name='industry0',key=key)
+
+lastDays(7, key)
 ```
 
