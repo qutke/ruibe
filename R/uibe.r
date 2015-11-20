@@ -157,10 +157,11 @@ as.qtDate<-function(val=Sys.Date()){
 #' lastDays(5)
 #' }
 #' @export 
-lastDays<-function(day,key){
-  trading<-getData(data='tradingDay',key=key)
-  num<-as.integer(format(Sys.Date(), format="%Y%m%d"))
-  return(tail(trading[which(trading$busDate<num),],day)[1])
+lastDays<-function (day, key) {
+  trading <- getData(data = "tradingDay", key = key)
+  num <- as.integer(format(Sys.Date(), format = "%Y%m%d"))
+  day1<-tail(trading[which(trading$busDate < num), ], day)[1]
+  return(as.Date(as.character(day1),'%Y%m%d'))
 }
 
 
