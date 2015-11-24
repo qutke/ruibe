@@ -91,6 +91,10 @@ getData<-function(data,key,vars=NULL,qtid=NULL,startdate=NULL,enddate=NULL,sw1=N
   api <- paste(apiurl,'qutkedata',sep="/")
   if(is.null(api))  stop("ERROR: data is not match!")
   
+  if(!is.null(qtid) & is.character(qtid) & length(qtid)>1){
+    qtid<-paste(qtid,sep="",collapse=",")
+  }
+  
   args<-list(data=data,key=key,vars=vars,qtid=qtid,startdate=startdate,enddate=enddate,sw1=sw1,sw2=sw2,sw3=sw3)
   query<-compose_query(args)
   addr<-paste(api,query,sep="?")
