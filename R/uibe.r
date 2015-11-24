@@ -4,7 +4,6 @@
 #' @name ruibe
 NULL
 
-#apiurl<-'http://localhost:8090/api'
 apiurl<-'https://datas.qutke.com/api'
 
 #' Initiate the uibe project 
