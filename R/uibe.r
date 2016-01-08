@@ -4,7 +4,15 @@
 #' @name ruibe
 NULL
 
-apiurl<-'https://datas.qutke.com/api'
+#' Deprecated print
+#' @title Deprecated print
+#' @export 
+desc<-function(){
+  print("Deprecated!")
+  print("Please download new package: https://github.com/qutke/qutke")
+  print("API document: https://console.qutke.com/api.html")
+  invisible()
+}
 
 #' Initiate the uibe project 
 #' @title Initiate
@@ -16,21 +24,7 @@ apiurl<-'https://datas.qutke.com/api'
 #' 
 #' @export 
 init <- function (key) {
-  versionno <- packageDescription('ruibe')$Version
-  options(stringsAsFactors = FALSE)
-  if(is.null(key)) stop("ERROR: Key is not empty!")
-  
-  api <- paste(apiurl,'validate',sep="/")
-  if(is.null(api))  stop("ERROR: data is not match!")
-  
-  args<-list(key=key,version=versionno)
-  query<-compose_query(args)
-  addr<-paste(api,query,sep="?")
-  addr<-URLencode(addr)
-  result <- (read.table(addr,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"));
-  
-  print(result$message)
-  invisible()
+  desc()
 }
 
 
@@ -85,20 +79,7 @@ init <- function (key) {
 #' 
 #' @export 
 getData<-function(data,key,vars=NULL,qtid=NULL,startdate=NULL,enddate=NULL,sw1=NULL,sw2=NULL,sw3=NULL){
-  if(is.null(key))  stop("ERROR: Key is not empty!")
-  
-  api <- paste(apiurl,'qutkedata',sep="/")
-  if(is.null(api))  stop("ERROR: data is not match!")
-  
-  if(!is.null(qtid) & is.character(qtid) & length(qtid)>1){
-    qtid<-paste(qtid,sep="",collapse=",")
-  }
-  
-  args<-list(data=data,key=key,vars=vars,qtid=qtid,startdate=startdate,enddate=enddate,sw1=sw1,sw2=sw2,sw3=sw3)
-  query<-compose_query(args)
-  addr<-paste(api,query,sep="?")
-  addr<-URLencode(addr)
-  return(read.table(addr,sep=",",header=TRUE,fileEncoding = "utf-8", encoding = "utf-8"));
+  desc()
 }
 
 
@@ -123,16 +104,7 @@ getData<-function(data,key,vars=NULL,qtid=NULL,startdate=NULL,enddate=NULL,sw1=N
 #' 
 #' @export 
 postData<-function(df,name=NULL,key=NULL){
-  if(is.null(key)) stop("ERROR: Key is not empty!")
-  if(nrow(df)>2000) stop("ERROR: Data rows is too large!")
-  if(ncol(df)>15) stop("ERROR: Data columns is too large!")
-
-  #url<-paste(host$host2,key,sep="/")
-  url<-paste(apiurl,'adduserdata',key,sep="/")
-  json<-list(data=toJSON(df),title=name)
-  
-  res<-POST(url, body=json, encode="json")
-  return(content(res))
+  desc()
 }
 
 
@@ -146,25 +118,8 @@ postData<-function(df,name=NULL,key=NULL){
 #' as.qtDate('2015-10-10')
 #' @export 
 as.qtDate<-function(val=Sys.Date()){
-  as.character(as.numeric(as.POSIXct(as.Date(val)))*1000)
+  desc()
 }
 
-#' Subtracts the specified amount of Day to the current trading date
-#' @title Subtracts the specified amount of Day to the current trading date
-#' @param day amount to subtract
-#' @param key auth key
-#' @return character
-#' @author Zhou Yong
-#' @examples
-#' \dontrun{
-#' lastDays(5)
-#' }
-#' @export 
-lastDays<-function (day, key) {
-  trading <- getData(data = "tradingDay", key = key)
-  num <- as.integer(format(Sys.Date(), format = "%Y%m%d"))
-  day1<-tail(trading[which(trading$busDate < num), ], day)[1]
-  return(as.Date(as.character(day1),'%Y%m%d'))
-}
 
 
