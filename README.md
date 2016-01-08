@@ -1,5 +1,12 @@
-RUIBE, R Package for UIBE project
+[Deprecated] RUIBE, R Package for UIBE project
 =======================
+
+New Package 
+
++ https://github.com/qutke/qutke
++ https://console.qutke.com/api.html
+
+## Deprecated
 
 R Package for UIBE project provided by Qutke.com .
 
@@ -47,12 +54,12 @@ index6<-getData(data='mktDataIndex',vars='qtid,date,prevClose,open,hi,lo,close,v
 
 industry0<-getData(data='industryType',key=key)
 industry1<-getData(data='industryType',qtid='000001.SZ',key=key)
-industry2<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',key=key)
-industry3<-getData(data='industryType',qtid='000001.SZ',startdate='2015-09-29',sw1='金融服务',key=key)
-industry4<-getData(data='industryType',qtid='000001.SZ',startdate='2015-09-29',enddate='2015-10-11',sw1='金融服务',key=key)
-industry5<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',sw2='银行',key=key)
-industry6<-getData(data='industryType',qtid='000001.SZ',sw1='金融服务',sw2='银行',sw3='银行',key=key)
-industry7<-getData(data='industryType',vars='qtid,date,CompanyCode,SecuCode,ChiName,ChiNameAbbr,EngName,EngNameAbbr',qtid='000001.SZ',sw1='金融服务',sw2='银行',sw3='银行',key=key)
+industry2<-getData(data='industryType',qtid='000001.SZ',sw1='閲戣瀺鏈嶅姟',key=key)
+industry3<-getData(data='industryType',qtid='000001.SZ',startdate='2015-09-29',sw1='閲戣瀺鏈嶅姟',key=key)
+industry4<-getData(data='industryType',qtid='000001.SZ',startdate='2015-09-29',enddate='2015-10-11',sw1='閲戣瀺鏈嶅姟',key=key)
+industry5<-getData(data='industryType',qtid='000001.SZ',sw1='閲戣瀺鏈嶅姟',sw2='閾惰',key=key)
+industry6<-getData(data='industryType',qtid='000001.SZ',sw1='閲戣瀺鏈嶅姟',sw2='閾惰',sw3='閾惰',key=key)
+industry7<-getData(data='industryType',vars='qtid,date,CompanyCode,SecuCode,ChiName,ChiNameAbbr,EngName,EngNameAbbr',qtid='000001.SZ',sw1='閲戣瀺鏈嶅姟',sw2='閾惰',sw3='閾惰',key=key)
 
 fund1<-getData(data='financialIndex',qtid='000001.SZ',key=key)
 fund2<-getData(data='financialIndex',startdate='2015-09-29',key=key)
