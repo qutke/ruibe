@@ -1,21 +1,21 @@
 Package: ruibe
-Title: R Package for UIBE project
+Title: [Deprecated] R Package for UIBE project
 Type: Package
-Description: R Package for UIBE project provided by Qutke.com.
+Description: Deprecated!! R Package for UIBE project provided by Qutke.com.
 Authors@R: c(
     person("Dan", "Zhang", role = c("aut", "cre"), email = "zhangd@qutke.com"),
     person("Yong", "Zhou", role = "aut", email = "zhouy@qutke.com")
     )
-Version: 0.13
+Version: 0.14
 Depends:
     R (>= 3.1.1)
 Imports:
     httr,
-    RJSONIO    
+    RJSONIO
 License: GPL-2
 LazyData: TRUE
 Date: 2015-10-19
-URL: http://ruibe.qutke.com
+URL: https://github.com/qutke/ruibe
 Collate:
     'uibe.r'
     'util.r'
